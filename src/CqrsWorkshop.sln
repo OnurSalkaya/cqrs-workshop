@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-MonolithAPI", "01-MonolithAPI", "{47C852F9-B760-42B2-B735-88FC5A083B5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApiMonolith", "OrderApiMonolith\OrderApiMonolith.csproj", "{D5B73893-1404-4968-881C-84C7EBAD7FF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5B73893-1404-4968-881C-84C7EBAD7FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B73893-1404-4968-881C-84C7EBAD7FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B73893-1404-4968-881C-84C7EBAD7FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B73893-1404-4968-881C-84C7EBAD7FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5B73893-1404-4968-881C-84C7EBAD7FF0} = {47C852F9-B760-42B2-B735-88FC5A083B5A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33A04F6E-0CB3-4CA8-A346-F7EB478DFBD2}
+	EndGlobalSection
+EndGlobal
