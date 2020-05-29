@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiMonolith\\OrderApiMonolith.csproj": {}
+    "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiCQRS\\OrderApiCQRS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiMonolith\\OrderApiMonolith.csproj": {
+    "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiCQRS\\OrderApiCQRS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiMonolith\\OrderApiMonolith.csproj",
-        "projectName": "OrderApiMonolith",
-        "projectPath": "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiMonolith\\OrderApiMonolith.csproj",
+        "projectUniqueName": "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiCQRS\\OrderApiCQRS.csproj",
+        "projectName": "OrderApiCQRS",
+        "projectPath": "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiCQRS\\OrderApiCQRS.csproj",
         "packagesPath": "C:\\Users\\onur.salkaya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiMonolith\\obj\\",
+        "outputPath": "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\OrderApiCQRS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
