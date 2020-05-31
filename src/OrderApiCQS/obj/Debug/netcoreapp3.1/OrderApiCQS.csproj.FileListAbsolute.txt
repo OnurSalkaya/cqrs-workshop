@@ -27,7 +27,6 @@ C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-worksh
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQS\bin\Debug\netcoreapp3.1\OrderApiCQS.runtimeconfig.dev.json
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQS\bin\Debug\netcoreapp3.1\OrderApiCQS.dll
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQS\bin\Debug\netcoreapp3.1\OrderApiCQS.pdb
-C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQS\obj\Debug\netcoreapp3.1\OrderApiCQS.csprojAssemblyReference.cache
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQS\obj\Debug\netcoreapp3.1\OrderApiCQS.AssemblyInfoInputs.cache
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQS\obj\Debug\netcoreapp3.1\OrderApiCQS.AssemblyInfo.cs
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQS\obj\Debug\netcoreapp3.1\OrderApiCQS.csproj.CoreCompileInputs.cache

@@ -1,7 +1,6 @@
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\CqrsWorkshop.Core\bin\Debug\netcoreapp3.1\CqrsWorkshop.Core.deps.json
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\CqrsWorkshop.Core\bin\Debug\netcoreapp3.1\CqrsWorkshop.Core.dll
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\CqrsWorkshop.Core\bin\Debug\netcoreapp3.1\CqrsWorkshop.Core.pdb
-C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\CqrsWorkshop.Core\obj\Debug\netcoreapp3.1\CqrsWorkshop.Core.csprojAssemblyReference.cache
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\CqrsWorkshop.Core\obj\Debug\netcoreapp3.1\CqrsWorkshop.Core.AssemblyInfoInputs.cache
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\CqrsWorkshop.Core\obj\Debug\netcoreapp3.1\CqrsWorkshop.Core.AssemblyInfo.cs
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\CqrsWorkshop.Core\obj\Debug\netcoreapp3.1\CqrsWorkshop.Core.csproj.CoreCompileInputs.cache
