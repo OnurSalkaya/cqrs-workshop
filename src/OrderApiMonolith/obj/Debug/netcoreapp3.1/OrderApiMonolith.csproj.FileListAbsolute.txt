@@ -60,9 +60,6 @@ C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-worksh
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\obj\Debug\netcoreapp3.1\OrderApiMonolith.csproj.CopyComplete
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\obj\Debug\netcoreapp3.1\OrderApiMonolith.csprojAssemblyReference.cache
-C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\bin\Debug\netcoreapp3.1\CqrsWorkshop.Core.dll
-C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\bin\Debug\netcoreapp3.1\CqrsWorkshop.Core.pdb
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiMonolith\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll

@@ -1326,16 +1326,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "CqrsWorkshop.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/CqrsWorkshop.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CqrsWorkshop.Core.dll": {}
-        }
       }
     }
   },
@@ -5058,16 +5048,10 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
-    },
-    "CqrsWorkshop.Core/1.0.0": {
-      "type": "project",
-      "path": "../CqrsWorkshop.Core/CqrsWorkshop.Core.csproj",
-      "msbuildProject": "../CqrsWorkshop.Core/CqrsWorkshop.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CqrsWorkshop.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.4",
       "Swashbuckle.AspNetCore >= 5.4.1",
@@ -5106,11 +5090,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\CqrsWorkshop.Core\\CqrsWorkshop.Core.csproj": {
-              "projectPath": "C:\\Users\\onur.salkaya\\OnurS Documents\\CQRS Workshop\\CqrsWorkshopCode\\cqrs-workshop\\src\\CqrsWorkshop.Core\\CqrsWorkshop.Core.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

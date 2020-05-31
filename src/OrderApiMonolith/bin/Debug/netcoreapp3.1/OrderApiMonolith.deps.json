@@ -24,7 +24,6 @@
     ".NETCoreApp,Version=v3.1": {
       "OrderApiMonolith/1.0.0": {
         "dependencies": {
-          "CqrsWorkshop.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.4",
           "Swashbuckle.AspNetCore": "5.4.1",
@@ -1248,14 +1247,6 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
-        }
-      },
-      "CqrsWorkshop.Core/1.0.0": {
-        "runtime": {
-          "CqrsWorkshop.Core.dll": {}
-        },
-        "compile": {
-          "CqrsWorkshop.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3469,11 +3460,6 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
-    },
-    "CqrsWorkshop.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",
