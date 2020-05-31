@@ -17,3 +17,4 @@ C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-worksh
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQRS\obj\Debug\netcoreapp3.1\OrderApiCQRS.dll
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQRS\obj\Debug\netcoreapp3.1\OrderApiCQRS.pdb
 C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQRS\obj\Debug\netcoreapp3.1\OrderApiCQRS.genruntimeconfig.cache
+C:\Users\onur.salkaya\OnurS Documents\CQRS Workshop\CqrsWorkshopCode\cqrs-workshop\src\OrderApiCQRS\obj\Debug\netcoreapp3.1\OrderApiCQRS.csprojAssemblyReference.cache
