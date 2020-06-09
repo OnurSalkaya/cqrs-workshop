@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OrderApiCQS.Data.Entities;
-using OrderApiCQS.Data.Mappings;
+using OrderApiCQS.Domain.Data.Entities;
+using OrderApiCQS.Domain.Data.Mappings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OrderApiCQS.Data
+namespace OrderApiCQS.Domain.Data
 {
     public class WorkshopDbContext : DbContext
     {

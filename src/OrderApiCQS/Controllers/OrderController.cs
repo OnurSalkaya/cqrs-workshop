@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using OrderApiCQS.Domain.Commands;
+using OrderApiCQS.Domain.Queries;
 using System.Threading.Tasks;
-using MediatR;
-using OrderApiCQS.Data.Entities;
-using OrderApiCQS.Commands;
-using OrderApiCQS.Queries;
 
 namespace OrderApiCQS.Controllers
 {

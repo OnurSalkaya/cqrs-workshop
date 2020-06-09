@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OrderApiCQS.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using OrderApiCQS.Domain.Data.Entities;
 using System.Threading.Tasks;
 
-namespace OrderApiCQS.Data.Repositories
+namespace OrderApiCQS.Domain.Data.Repositories
 {
     public interface IOrderRepository
     {

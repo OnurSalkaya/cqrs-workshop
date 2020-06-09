@@ -1,19 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MediatR;
-using System.Reflection;
 using Microsoft.OpenApi.Models;
-using OrderApiCQS.Data;
-using OrderApiCQS.Data.Repositories;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
+using OrderApiCQS.Domain.Data;
+using OrderApiCQS.Domain.Data.Repositories;
+using System.Reflection;
 
 namespace OrderApiCQS
 {

@@ -1,15 +1,11 @@
 ﻿using MediatR;
-using OrderApiCQS.Commands;
-using OrderApiCQS.Data;
-using OrderApiCQS.Data.Entities;
-using OrderApiCQS.Data.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using OrderApiCQS.Domain.Commands;
+using OrderApiCQS.Domain.Data.Entities;
+using OrderApiCQS.Domain.Data.Repositories;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OrderApiCQS.Handlers
+namespace OrderApiCQS.Domain.Handlers.CommandHandlers
 {
     public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Order>
     {

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using OrderApiCQS.Data.Entities;
+using OrderApiCQS.Domain.Data.Entities;
 
-namespace OrderApiCQS.Data.Mappings
+namespace OrderApiCQS.Domain.Data.Mappings
 {
     public class OrderMapping : IEntityTypeConfiguration<Order>
     {

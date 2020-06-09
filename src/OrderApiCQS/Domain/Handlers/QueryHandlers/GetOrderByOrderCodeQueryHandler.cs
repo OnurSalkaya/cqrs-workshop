@@ -1,15 +1,12 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using OrderApiCQS.Data;
-using OrderApiCQS.Data.Entities;
-using OrderApiCQS.Queries;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using OrderApiCQS.Domain.Data;
+using OrderApiCQS.Domain.Data.Entities;
+using OrderApiCQS.Domain.Queries;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OrderApiCQS.Handlers
+namespace OrderApiCQS.Domain.Handlers.QueryHandlers
 {
     public class GetOrderByOrderCodeQueryHandler : IRequestHandler<GetOrderByOrderCodeQuery, Order>
     {

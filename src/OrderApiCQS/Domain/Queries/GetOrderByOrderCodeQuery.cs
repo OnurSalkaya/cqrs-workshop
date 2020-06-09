@@ -1,11 +1,7 @@
 ﻿using MediatR;
-using OrderApiCQS.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using OrderApiCQS.Domain.Data.Entities;
 
-namespace OrderApiCQS.Queries
+namespace OrderApiCQS.Domain.Queries
 {
     public class GetOrderByOrderCodeQuery : IRequest<Order>
     {
