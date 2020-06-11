@@ -20,6 +20,9 @@ namespace OrderApiCQS.Domain.Data.Mappings
                 .HasColumnType("DateTime")
                 .IsRequired(true);
 
+            builder.Property(p => p.UserId)
+                .IsRequired(true);
+
             builder.Property(p => p.TotalPrice)
                 .HasColumnType("Money")
                 .IsRequired(true);

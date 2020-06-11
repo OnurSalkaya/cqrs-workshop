@@ -10,6 +10,8 @@ namespace OrderApiCQS.Domain.Commands
 
         public DateTime OrderDate { get; set; }
 
+        public int UserId { get; set; }
+
         public decimal TotalPrice { get; set; }
     }
 }

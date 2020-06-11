@@ -49,6 +49,7 @@ namespace OrderApiCQS
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
