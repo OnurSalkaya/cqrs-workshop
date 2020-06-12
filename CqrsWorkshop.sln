@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-MonolithAPI", "01-MonolithAPI", "{47C852F9-B760-42B2-B735-88FC5A083B5A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-ImplementingCQRS", "03-ImplementingCQRS", "{47C852F9-B760-42B2-B735-88FC5A083B5A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApiMonolith", "src\OrderApiMonolith\OrderApiMonolith.csproj", "{D5B73893-1404-4968-881C-84C7EBAD7FF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApiCQRS", "src\OrderApiCQRS\OrderApiCQRS.csproj", "{D5B73893-1404-4968-881C-84C7EBAD7FF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
