@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrderApiCQRS.Models;
 using OrderApiMonolith.Data.Entities;
 using OrderApiMonolith.Services;
 using System;
@@ -22,17 +23,17 @@ namespace OrderApiMonolith.Controllers
         }
 
         [HttpPost()]
-        public async Task<IActionResult> CreateOrder(Order order)
+        public async Task<IActionResult> CreateOrder(OrderRequest orderRequest)
         {
-            await _orderService.CreateOrder(order);
+            await _orderService.CreateOrder(orderRequest);
             return Ok();
         }
 
-        [HttpGet()]
-        public async Task<IActionResult> GetOrder([FromQuery]string orderCode)
-        {
-            var order = await _orderService.GetOrder(orderCode);
-            return Ok(order);
-        }
+        //[HttpGet()]
+        //public async Task<IActionResult> GetOrder([FromQuery] string orderCode)
+        //{
+        //    var order = await _orderService.GetOrder(orderCode);
+        //    return Ok(order);
+        //}
     }
 }

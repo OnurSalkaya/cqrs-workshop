@@ -8,6 +8,10 @@ using OrderApiMonolith.Data.Repositories;
 using OrderApiMonolith.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using MassTransit;
+using OrderApiCQRS.Consumers.CommandHandlers;
+using GreenPipes;
+using OrderApiCQRS.Consumers.EventHandlers;
 
 namespace OrderApiMonolith
 {
@@ -31,7 +35,7 @@ namespace OrderApiMonolith
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OrderAPI - Monolith", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OrderAPI - CQRS", Version = "v1" });
             });
 
             services.AddControllers();
@@ -44,6 +48,43 @@ namespace OrderApiMonolith
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: System.TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                     });
             });
+
+            services.AddMassTransit(x =>
+            {
+                x.AddConsumer<CreateOrderCommandHandler>();
+                x.AddConsumer<OrderCreatedEventHandler>();
+                x.AddConsumer<CalculateDailyTotalSalesHandler>();
+
+                x.AddBus(context => Bus.Factory.CreateUsingRabbitMq(cfg =>
+                {
+                    cfg.UseHealthCheck(context);
+
+                    cfg.Host("rabbitmq://localhost");
+
+                    cfg.ReceiveEndpoint("create-order-command-queue", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(3, 500));
+                        ep.ConfigureConsumer<CreateOrderCommandHandler>(context);
+                    });
+
+                    cfg.ReceiveEndpoint("order-created-event-queue", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(3, 500));
+                        ep.ConfigureConsumer<OrderCreatedEventHandler>(context);
+                    });
+
+                    cfg.ReceiveEndpoint("daily-total-sales-queue", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(3, 500));
+                        ep.ConfigureConsumer<CalculateDailyTotalSalesHandler>(context);
+                    });
+                }));
+            });
+
+            services.AddMassTransitHostedService();
 
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderRepository, OrderRepository>();
@@ -61,7 +102,7 @@ namespace OrderApiMonolith
             app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "OrderAPI - Monolith V1"); });
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "OrderAPI - CQRS V1"); });
 
             var serviceScopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
             using (var serviceScope = serviceScopeFactory.CreateScope())
