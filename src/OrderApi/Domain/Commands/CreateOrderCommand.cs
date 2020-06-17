@@ -1,11 +1,12 @@
-﻿using System;
+﻿using OrderApi.Domain.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace OrderApi.Domain.Commands
 {
-    public class CreateOrderCommand
+    public class CreateOrderCommand : Command
     {
         public string OrderCode { get; set; }
 
