@@ -8,7 +8,7 @@ namespace OrderApiCQS.Domain.Events
 {
     public class OrderCreatedEvent : INotification
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string OrderCode { get; set; }
 

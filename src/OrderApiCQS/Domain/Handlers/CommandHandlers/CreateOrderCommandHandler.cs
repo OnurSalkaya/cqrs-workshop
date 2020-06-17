@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OrderApiCQS.Domain.Handlers.CommandHandlers
 {
-    public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Order>
+    public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand>
     {
         private readonly IMediator _mediator;
         private readonly IOrderRepository _orderRepository;
@@ -19,35 +19,28 @@ namespace OrderApiCQS.Domain.Handlers.CommandHandlers
             _orderRepository = orderRepository;
         }
 
-        public async Task<Order> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            try
+            Order order = new Order()
             {
-                Order order = new Order()
-                {
-                    OrderCode = request.OrderCode,
-                    OrderDate = request.OrderDate,
-                    UserId = request.UserId,
-                    TotalPrice = request.TotalPrice
-                };
+                OrderCode = request.OrderCode,
+                OrderDate = request.OrderDate,
+                UserId = request.UserId,
+                TotalPrice = request.TotalPrice
+            };
 
-                await _orderRepository.Create(order);
+            await _orderRepository.Create(order);
 
-                await _mediator.Publish(new OrderCreatedEvent()
-                {
-                    Id = order.Id,
-                    OrderCode = order.OrderCode,
-                    OrderDate = order.OrderDate,
-                    UserId = order.UserId,
-                    TotalPrice = order.TotalPrice
-                }, cancellationToken);
-
-                return order;
-            }
-            catch
+            await _mediator.Publish(new OrderCreatedEvent()
             {
-                return null;
-            }
+                Id = order.Id,
+                OrderCode = order.OrderCode,
+                OrderDate = order.OrderDate,
+                UserId = order.UserId,
+                TotalPrice = order.TotalPrice
+            }, cancellationToken);
+
+            return Unit.Value;
         }
     }
 }

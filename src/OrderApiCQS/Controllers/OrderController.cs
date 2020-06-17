@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using OrderApiCQS.Domain.Commands;
 using OrderApiCQS.Domain.Queries;
+using System;
 using System.Threading.Tasks;
 
 namespace OrderApiCQS.Controllers
@@ -21,8 +22,10 @@ namespace OrderApiCQS.Controllers
         [HttpPost()]
         public async Task<IActionResult> CreateOrder(CreateOrderCommand createOrderCommand)
         {
-            var order = await _mediator.Send(createOrderCommand);
-            return Ok(order);
+            createOrderCommand.Id = Guid.NewGuid();
+
+            await _mediator.Send(createOrderCommand);
+            return Ok();
         }
 
         [HttpGet()]

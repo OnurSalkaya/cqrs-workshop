@@ -4,8 +4,10 @@ using System;
 
 namespace OrderApiCQS.Domain.Commands
 {
-    public class CreateOrderCommand : IRequest<Order>
+    public class CreateOrderCommand : IRequest
     {
+        public Guid Id { get; set; }
+
         public string OrderCode { get; set; }
 
         public DateTime OrderDate { get; set; }
