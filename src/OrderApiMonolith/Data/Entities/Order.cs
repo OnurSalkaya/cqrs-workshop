@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Authentication.ExtendedProtection;
 using System.Threading.Tasks;
 
 namespace OrderApiMonolith.Data.Entities
@@ -16,5 +17,7 @@ namespace OrderApiMonolith.Data.Entities
         public int UserId { get; set; }
 
         public decimal TotalPrice { get; set; }
+
+        public string Status { get; set; }
     }
 }

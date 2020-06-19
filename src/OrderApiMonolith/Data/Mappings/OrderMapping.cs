@@ -30,6 +30,10 @@ namespace OrderApiMonolith.Data.Mappings
             builder.Property(p => p.TotalPrice)
                 .HasColumnType("Money")
                 .IsRequired(true);
+
+            builder.Property(p => p.Status)
+                .HasMaxLength(255)
+                .IsRequired(true);
         }
     }
 }
