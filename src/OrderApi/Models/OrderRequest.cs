@@ -7,6 +7,8 @@ namespace OrderApi.Models
 {
     public class OrderRequest
     {
+        public Guid Id { get; set; }
+
         public string OrderCode { get; set; }
 
         public DateTime OrderDate { get; set; }

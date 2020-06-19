@@ -3,6 +3,7 @@ using OrderApi.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace OrderApi.Data.Repositories.MsSql
@@ -11,7 +12,7 @@ namespace OrderApi.Data.Repositories.MsSql
     {
         Task Create(Order order);
 
-        Task<Order> Get(string orderCode);
+        Task<Order> Get(Guid id);
     }
 
     public class OrderRepository : IOrderRepository
@@ -25,13 +26,12 @@ namespace OrderApi.Data.Repositories.MsSql
 
         public async Task Create(Order order)
         {
-            _dbContext.Orders.Add(order);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.AddAndSaveAsync(order);
         }
 
-        public async Task<Order> Get(string orderCode)
+        public async Task<Order> Get(Guid id)
         {
-            return await _dbContext.Orders.SingleOrDefaultAsync(x => x.OrderCode == orderCode);
+            return await _dbContext.Orders.SingleOrDefaultAsync(x => x.Id == id);
         }
     }
 }

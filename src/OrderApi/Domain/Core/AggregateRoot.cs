@@ -7,12 +7,13 @@ namespace OrderApi.Domain.Core
 {
     public abstract class AggregateRoot
     {
-        private readonly List<Event> _changes = new List<Event>();
+        private readonly List<object> _changes = new List<object>();
 
         public abstract Guid Id { get; }
-        public int Version { get; internal set; }
 
-        public IEnumerable<Event> GetUncommittedChanges()
+        protected abstract void When(object @event);
+
+        public IEnumerable<object> GetUncommittedChanges()
         {
             return _changes;
         }
@@ -22,17 +23,10 @@ namespace OrderApi.Domain.Core
             _changes.Clear();
         }
 
-        public void LoadsFromHistory(IEnumerable<Event> history)
+        protected void ApplyChange(object @event)
         {
-            foreach (var e in history)
-            {
-                ApplyChange(e);
-            }
-        }
-
-        protected void ApplyChange(Event @event)
-        {
-            ApplyChange(@event);
+            When(@event);
+            _changes.Add(@event);
         }
     }
 }

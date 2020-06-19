@@ -14,8 +14,6 @@ namespace OrderApi.Services
     public interface IOrderService
     {
         Task CreateOrder(OrderRequest orderRequest);
-
-        //Task<Order> GetOrder(string orderCode);
     }
 
     public class OrderService : IOrderService
@@ -31,6 +29,7 @@ namespace OrderApi.Services
         {
             var createOrderCommand = new CreateOrderCommand()
             {
+                Id = Guid.NewGuid(),
                 OrderCode = orderRequest.OrderCode,
                 OrderDate = orderRequest.OrderDate,
                 UserId = orderRequest.UserId,
@@ -39,10 +38,5 @@ namespace OrderApi.Services
 
             await _busControl.Send(createOrderCommand, "create-order-command-queue");
         }
-
-        //public async Task<Order> GetOrder(string orderCode)
-        //{
-        //    return await _orderRepository.Get(orderCode);
-        //}
     }
 }

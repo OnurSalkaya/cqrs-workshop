@@ -19,6 +19,7 @@ namespace OrderQueryApi.Projections
         {
             var listingOrderDocument = new ListingOrder()
             {
+                OrderId = context.Message.Id,
                 OrderCode = context.Message.OrderCode,
                 OrderDate = context.Message.OrderDate,
                 UserId = context.Message.UserId,

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OrderApi.Data.Entities;
+using OrderApi.Domain.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,14 +9,27 @@ namespace OrderApi.Domain.Events
 {
     public class OrderCreatedEvent
     {
-        public int Id { get; set; }
+        public OrderCreatedEvent(Guid id,
+            string orderCode,
+            DateTime orderDate,
+            int userId,
+            decimal totalPrice)
+        {
+            Id = id;
+            OrderCode = orderCode;
+            OrderDate = orderDate;
+            UserId = userId;
+            TotalPrice = totalPrice;
+        }
 
-        public string OrderCode { get; set; }
+        public Guid Id { get; }
 
-        public DateTime OrderDate { get; set; }
+        public string OrderCode { get; }
 
-        public int UserId { get; set; }
+        public DateTime OrderDate { get; }
 
-        public decimal TotalPrice { get; set; }
+        public int UserId { get; }
+
+        public decimal TotalPrice { get; }
     }
 }

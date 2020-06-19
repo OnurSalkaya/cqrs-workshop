@@ -10,6 +10,8 @@ namespace OrderQueryApi.Models.Projections
     {
         public ObjectId _id { get; set; }
 
+        public Guid OrderId { get; set; }
+
         public string OrderCode { get; set; }
 
         public DateTime OrderDate { get; set; }

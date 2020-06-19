@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace OrderApi.Domain.Commands
 {
-    public class CreateOrderCommand : Command
+    public class CreateOrderCommand
     {
+        public Guid Id { get; set; }
+
         public string OrderCode { get; set; }
 
         public DateTime OrderDate { get; set; }
