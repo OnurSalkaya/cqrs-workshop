@@ -28,6 +28,13 @@ namespace OrderApiCQS.Controllers
             return Ok();
         }
 
+        [HttpPost("ship")]
+        public async Task<IActionResult> ShipOrder(ShipOrderCommand shipOrderCommand)
+        {
+            await _mediator.Send(shipOrderCommand);
+            return Ok();
+        }
+
         [HttpGet()]
         public async Task<IActionResult> GetOrder([FromQuery] string orderCode)
         {

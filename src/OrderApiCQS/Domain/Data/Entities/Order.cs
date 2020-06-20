@@ -13,5 +13,7 @@ namespace OrderApiCQS.Domain.Data.Entities
         public int UserId { get; set; }
 
         public decimal TotalPrice { get; set; }
+
+        public string Status { get; set; }
     }
 }

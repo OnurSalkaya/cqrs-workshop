@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderApiCQS.Domain.Events
 {
-    public class OrderCreatedEvent : INotification
+    public class OrderShippedEvent : INotification
     {
         public Guid Id { get; set; }
 

@@ -3,37 +3,37 @@ using OrderApiCQS.Domain.Commands;
 using OrderApiCQS.Domain.Data.Entities;
 using OrderApiCQS.Domain.Data.Repositories;
 using OrderApiCQS.Domain.Events;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace OrderApiCQS.Domain.Handlers.CommandHandlers
 {
-    public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand>
+    public class ShipOrderCommandHandler : IRequestHandler<ShipOrderCommand>
     {
         private readonly IMediator _mediator;
         private readonly IOrderRepository _orderRepository;
 
-        public CreateOrderCommandHandler(IMediator mediator, IOrderRepository orderRepository)
+        public ShipOrderCommandHandler(IMediator mediator, IOrderRepository orderRepository)
         {
             _mediator = mediator;
             _orderRepository = orderRepository;
         }
 
-        public async Task<Unit> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(ShipOrderCommand request, CancellationToken cancellationToken)
         {
-            Order order = new Order()
-            {
-                Id = request.Id,
-                OrderCode = request.OrderCode,
-                OrderDate = request.OrderDate,
-                UserId = request.UserId,
-                TotalPrice = request.TotalPrice,
-                Status = "Created"
-            };
+            var order = await _orderRepository.Get(request.OrderCode);
 
-            await _orderRepository.Create(order);
+            //if (order.Status != "Created")
+            //{
+            //    throw new InvalidOperationException($"Order({request.OrderCode} can not be shipped!");
+            //}
 
-            await _mediator.Publish(new OrderCreatedEvent()
+            order.Status = "Shipped";
+
+            await _orderRepository.Update(order);
+
+            await _mediator.Publish(new OrderShippedEvent()
             {
                 Id = order.Id,
                 OrderCode = order.OrderCode,
