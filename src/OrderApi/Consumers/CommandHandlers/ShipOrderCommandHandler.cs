@@ -10,31 +10,22 @@ using System.Threading.Tasks;
 
 namespace OrderApi.Consumers.CommandHandlers
 {
-    public class CreateOrderCommandHandler : IConsumer<CreateOrderCommand>
+    public class ShipOrderCommandHandler : IConsumer<ShipOrderCommand>
     {
         private readonly IOrderRepository _orderRepository;
 
-        public CreateOrderCommandHandler(IOrderRepository orderRepository)
+        public ShipOrderCommandHandler(IOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
         }
 
-        public async Task Consume(ConsumeContext<CreateOrderCommand> context)
+        public async Task Consume(ConsumeContext<ShipOrderCommand> context)
         {
-            var order = new Order()
-            {
-                Id = context.Message.Id,
-                OrderCode = context.Message.OrderCode,
-                OrderDate = context.Message.OrderDate,
-                UserId = context.Message.UserId,
-                TotalPrice = context.Message.TotalPrice,
-                Status = "Created"
-            };
-
-            await _orderRepository.Create(order);
+            var order = await _orderRepository.Get(context.Message.OrderCode);
+            order.Status = "Shipped";
 
             //publish event
-            var orderCreatedEvent = new OrderCreatedEvent()
+            var orderCreatedEvent = new OrderShippedEvent()
             {
                 Id = order.Id,
                 OrderCode = order.OrderCode,

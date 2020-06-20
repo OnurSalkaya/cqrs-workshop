@@ -7,7 +7,7 @@ namespace OrderApi.Domain.Events
 {
     public class OrderCreatedEvent
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string OrderCode { get; set; }
 
@@ -16,5 +16,7 @@ namespace OrderApi.Domain.Events
         public int UserId { get; set; }
 
         public decimal TotalPrice { get; set; }
+
+        public string Status { get; set; }
     }
 }

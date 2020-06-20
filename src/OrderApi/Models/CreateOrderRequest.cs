@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace OrderApi.Domain.Events
+namespace OrderApi.Models
 {
-    public class OrderCreatedEvent
+    public class CreateOrderRequest
     {
-        public Guid Id { get; set; }
-
         public string OrderCode { get; set; }
 
         public DateTime OrderDate { get; set; }
@@ -15,7 +14,5 @@ namespace OrderApi.Domain.Events
         public int UserId { get; set; }
 
         public decimal TotalPrice { get; set; }
-
-        public string Status { get; set; }
     }
 }

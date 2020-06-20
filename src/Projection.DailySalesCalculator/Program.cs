@@ -65,6 +65,7 @@ namespace Projection.DailySalesCalculator
         public ElkRepository()
         {
             _elasticClient = GetElasticClient();
+            CreateIndex();
         }
 
         private IElasticClient GetElasticClient()
@@ -82,6 +83,8 @@ namespace Projection.DailySalesCalculator
 
         public async Task CreateIndex()
         {
+            //var asd = await _elasticClient.Indices.DeleteAsync(Indices.Index(_indexName));
+
             var indexExistResponse = await _elasticClient.Indices.ExistsAsync(Indices.Index(_indexName));
             if (!indexExistResponse.Exists)
             {

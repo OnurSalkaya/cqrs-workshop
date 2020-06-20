@@ -23,17 +23,17 @@ namespace OrderApi.Controllers
         }
 
         [HttpPost()]
-        public async Task<IActionResult> CreateOrder(OrderRequest orderRequest)
+        public async Task<IActionResult> CreateOrder(CreateOrderRequest orderRequest)
         {
             await _orderService.CreateOrder(orderRequest);
             return Ok();
         }
 
-        //[HttpGet()]
-        //public async Task<IActionResult> GetOrder([FromQuery] string orderCode)
-        //{
-        //    var order = await _orderService.GetOrder(orderCode);
-        //    return Ok(order);<
-        //}
+        [HttpPost("ship")]
+        public async Task<IActionResult> ShipOrder(ShipOrderRequest shipOrderRequest)
+        {
+            await _orderService.ShipOrder(shipOrderRequest);
+            return Ok();
+        }
     }
 }

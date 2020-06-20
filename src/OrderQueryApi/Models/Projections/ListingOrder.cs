@@ -10,6 +10,8 @@ namespace OrderQueryApi.Models.Projections
     {
         public ObjectId _id { get; set; }
 
+        public string OrderId { get; set; }
+
         public string OrderCode { get; set; }
 
         public DateTime OrderDate { get; set; }
@@ -17,5 +19,7 @@ namespace OrderQueryApi.Models.Projections
         public int UserId { get; set; }
 
         public decimal TotalPrice { get; set; }
+
+        public string Status { get; set; }
     }
 }

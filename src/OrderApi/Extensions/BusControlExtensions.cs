@@ -4,6 +4,7 @@ using MassTransit.RabbitMqTransport;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrderApi.Consumers.CommandHandlers;
+using OrderApi.Domain.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,7 @@ namespace OrderApi.Extensions
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<CreateOrderCommandHandler>();
+                x.AddConsumer<ShipOrderCommandHandler>();
 
                 x.AddBus(context => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
@@ -70,6 +72,13 @@ namespace OrderApi.Extensions
                         ep.PrefetchCount = 16;
                         ep.UseMessageRetry(r => r.Interval(3, 500));
                         ep.ConfigureConsumer<CreateOrderCommandHandler>(context);
+                    });
+
+                    cfg.ReceiveEndpoint("ship-order-command-queue", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(3, 500));
+                        ep.ConfigureConsumer<ShipOrderCommandHandler>(context);
                     });
                 }));
             });

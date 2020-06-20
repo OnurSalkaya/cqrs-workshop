@@ -11,6 +11,8 @@ namespace OrderApi.Data.Repositories.MsSql
     {
         Task Create(Order order);
 
+        Task Update(Order order);
+
         Task<Order> Get(string orderCode);
     }
 
@@ -26,6 +28,12 @@ namespace OrderApi.Data.Repositories.MsSql
         public async Task Create(Order order)
         {
             _dbContext.Orders.Add(order);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task Update(Order order)
+        {
+            _dbContext.Orders.Update(order);
             await _dbContext.SaveChangesAsync();
         }
 
