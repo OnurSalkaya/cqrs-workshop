@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OrderApi.Models
 {
-    public class OrderRequest
+    public class CreateOrderRequest
     {
         public Guid Id { get; set; }
 

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OrderApi.Domain.Events
 {
-    public class OrderCreatedEvent
+    public class OrderShippedEvent
     {
-        public OrderCreatedEvent(Guid id,
+        public OrderShippedEvent(Guid id,
             string orderCode,
             DateTime orderDate,
             int userId,

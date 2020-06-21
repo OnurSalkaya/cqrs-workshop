@@ -14,6 +14,8 @@ namespace Projection.DailySalesCalculator
     {
         static void Main(string[] args)
         {
+            //new ElkRepository().DeleteIndex();
+
             var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
                 cfg.Host(new Uri("rabbitmq://localhost"), hst =>
@@ -91,6 +93,12 @@ namespace Projection.DailySalesCalculator
                       .NumberOfReplicas(0))
                   .Map(ms => ms.AutoMap<DailySales>()));
             }
+        }
+
+        public async Task DeleteIndex()
+        {
+            await _elasticClient.Indices.DeleteAsync(Indices.Index(_indexName));
+
         }
 
         public async Task InsertOrUpdate(DateTime orderDate, decimal amount)

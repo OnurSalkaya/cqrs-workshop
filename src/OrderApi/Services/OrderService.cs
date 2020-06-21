@@ -13,7 +13,9 @@ namespace OrderApi.Services
 {
     public interface IOrderService
     {
-        Task CreateOrder(OrderRequest orderRequest);
+        Task CreateOrder(CreateOrderRequest createOrderRequest);
+
+        Task ShipOrder(ShipOrderRequest shipOrderRequest);
     }
 
     public class OrderService : IOrderService
@@ -25,18 +27,28 @@ namespace OrderApi.Services
             _busControl = busControl;
         }
 
-        public async Task CreateOrder(OrderRequest orderRequest)
+        public async Task CreateOrder(CreateOrderRequest createOrderRequest)
         {
             var createOrderCommand = new CreateOrderCommand()
             {
                 Id = Guid.NewGuid(),
-                OrderCode = orderRequest.OrderCode,
-                OrderDate = orderRequest.OrderDate,
-                UserId = orderRequest.UserId,
-                TotalPrice = orderRequest.TotalPrice
+                OrderCode = createOrderRequest.OrderCode,
+                OrderDate = createOrderRequest.OrderDate,
+                UserId = createOrderRequest.UserId,
+                TotalPrice = createOrderRequest.TotalPrice
             };
 
             await _busControl.Send(createOrderCommand, "create-order-command-queue");
+        }
+
+        public async Task ShipOrder(ShipOrderRequest shipOrderRequest)
+        {
+            var shipOrderCommand = new ShipOrderCommand()
+            {
+                OrderCode = shipOrderRequest.OrderCode,
+            };
+
+            await _busControl.Send(shipOrderCommand, "ship-order-command-queue");
         }
     }
 }

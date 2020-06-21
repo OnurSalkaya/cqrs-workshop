@@ -15,5 +15,7 @@ namespace OrderApi.Domain.Events
         public int UserId { get; private set; }
 
         public decimal TotalPrice { get; private set; }
+
+        public string Status { get; private set; }
     }
 }

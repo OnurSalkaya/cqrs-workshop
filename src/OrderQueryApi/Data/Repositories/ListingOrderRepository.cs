@@ -12,6 +12,8 @@ namespace OrderQueryApi.Data.Repositories
     {
         Task Insert(ListingOrder listingOrderDocument);
 
+        Task UpdateStatus(string orderCode, string status);
+
         Task<ListingOrder> Get(string orderCode);
     }
 
@@ -31,6 +33,14 @@ namespace OrderQueryApi.Data.Repositories
         public async Task Insert(ListingOrder listingOrderDocument)
         {
             await mongoCollection.InsertOneAsync(listingOrderDocument);
+        }
+
+        public async Task UpdateStatus(string orderCode, string status)
+        {
+            var filterDefinition = Builders<ListingOrder>.Filter.Eq("OrderCode", orderCode);
+            var updateDefinition = Builders<ListingOrder>.Update.Set("Status", status);
+
+            await mongoCollection.UpdateOneAsync(filterDefinition, updateDefinition);
         }
 
         public async Task<ListingOrder> Get(string orderCode)

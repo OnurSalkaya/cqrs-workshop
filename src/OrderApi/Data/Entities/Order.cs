@@ -12,17 +12,6 @@ namespace OrderApi.Data.Entities
     {
         private Guid _id;
 
-        //Added for dbContext.Database.EnsureCreated(); because there must be parameterless constructor.
-        public Order()
-        {
-
-        }
-
-        public Order(Guid id, string orderCode, DateTime orderDate, int userId, decimal totalPrice)
-        {
-            ApplyChange(new OrderCreatedEvent(id, orderCode, orderDate, userId, totalPrice));
-        }
-
         public static Order Create(Guid id, string orderCode, DateTime orderDate, int userId, decimal totalPrice)
         {
             var order = new Order()
@@ -31,12 +20,23 @@ namespace OrderApi.Data.Entities
                 OrderCode = orderCode,
                 OrderDate = orderDate,
                 TotalPrice = totalPrice,
-                UserId = userId
+                UserId = userId,
+                Status = "Created"
             };
 
-            order.ApplyChange(new OrderCreatedEvent(id, orderCode, orderDate, userId, totalPrice));
+            order.ApplyChange(new OrderCreatedEvent(id, orderCode, orderDate, userId, totalPrice, "Created"));
 
             return order;
+        }
+
+        public void SetStatusAsShipped()
+        {
+            //if (Status != "Created")
+            //{
+            //    throw new InvalidOperationException($"Order({request.OrderCode} can not be shipped!");
+            //}
+
+            ApplyChange(new OrderShippedEvent(_id, OrderCode, OrderDate, UserId, TotalPrice, "Shipped"));
         }
 
         public override Guid Id
@@ -57,6 +57,10 @@ namespace OrderApi.Data.Entities
                     OrderDate = e.OrderDate;
                     UserId = e.UserId;
                     TotalPrice = e.TotalPrice;
+                    Status = e.Status;
+                    break;
+                case OrderShippedEvent e:
+                    Status = e.Status;
                     break;
             }
         }
@@ -69,6 +73,6 @@ namespace OrderApi.Data.Entities
 
         public decimal TotalPrice { get; private set; }
 
-
+        public string Status { get; private set; }
     }
 }

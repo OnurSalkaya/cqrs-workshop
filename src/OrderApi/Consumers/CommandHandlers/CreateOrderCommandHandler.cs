@@ -17,8 +17,8 @@ namespace OrderApi.Consumers.CommandHandlers
 
         public async Task Consume(ConsumeContext<CreateOrderCommand> context)
         {
-            var order = new Order(context.Message.Id, context.Message.OrderCode, context.Message.OrderDate, context.Message.UserId, context.Message.TotalPrice);
-                
+            var order = Order.Create(context.Message.Id, context.Message.OrderCode, context.Message.OrderDate, context.Message.UserId, context.Message.TotalPrice);
+
             await _orderRepository.Create(order);
         }
     }

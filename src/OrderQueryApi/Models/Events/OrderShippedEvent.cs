@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OrderApi.Domain.Events
 {
-    public class OrderCreatedEvent
+    public class OrderShippedEvent
     {
         public Guid Id { get; private set; }
 
