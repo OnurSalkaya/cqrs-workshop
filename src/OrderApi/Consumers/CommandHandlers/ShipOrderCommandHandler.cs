@@ -24,6 +24,8 @@ namespace OrderApi.Consumers.CommandHandlers
             var order = await _orderRepository.Get(context.Message.OrderCode);
             order.Status = "Shipped";
 
+            await _orderRepository.Update(order);
+
             //publish event
             var orderCreatedEvent = new OrderShippedEvent()
             {

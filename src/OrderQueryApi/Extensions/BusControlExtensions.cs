@@ -55,6 +55,7 @@ namespace OrderQueryApi.Extensions
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<OrderCreatedEventHandler>();
+                x.AddConsumer<OrderShippedEventHandler>();
 
                 x.AddBus(context => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
@@ -69,6 +70,13 @@ namespace OrderQueryApi.Extensions
                         ep.PrefetchCount = 16;
                         ep.UseMessageRetry(r => r.Interval(3, 500));
                         ep.ConfigureConsumer<OrderCreatedEventHandler>(context);
+                    });
+
+                    cfg.ReceiveEndpoint("order-shipped-event-queue", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(3, 500));
+                        ep.ConfigureConsumer<OrderShippedEventHandler>(context);
                     });
                 }));
             });
