@@ -65,6 +65,7 @@ namespace Projection.DailySalesCalculator
         public ElkRepository()
         {
             _elasticClient = GetElasticClient();
+            CreateIndex();
         }
 
         private IElasticClient GetElasticClient()
