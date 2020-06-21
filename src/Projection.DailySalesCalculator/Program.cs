@@ -14,8 +14,6 @@ namespace Projection.DailySalesCalculator
     {
         static void Main(string[] args)
         {
-            //new ElkRepository().DeleteIndex();
-
             var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
                 cfg.Host(new Uri("rabbitmq://localhost"), hst =>
