@@ -94,6 +94,12 @@ namespace Projection.DailySalesCalculator
             }
         }
 
+        public async Task DeleteIndex()
+        {
+            await _elasticClient.Indices.DeleteAsync(Indices.Index(_indexName));
+
+        }
+
         public async Task InsertOrUpdate(DateTime orderDate, decimal amount)
         {
             var documentId = orderDate.ToString("yyyyMMdd");
